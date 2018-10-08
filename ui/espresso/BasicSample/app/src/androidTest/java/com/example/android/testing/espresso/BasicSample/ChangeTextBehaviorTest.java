@@ -68,8 +68,10 @@ public class ChangeTextBehaviorTest {
     public void changeText_sameActivity() {
         // Type text and then press the button.
         onView(withId(R.id.editTextUserInput))
-                .perform(typeText(STRING_TO_BE_TYPED), closeSoftKeyboard());
+                .perform(typeText(STRING_TO_BE_TYPED));
         onView(withId(R.id.changeTextBt)).perform(click());
+
+
 
         // Check that the text was changed.
         onView(withId(R.id.textToBeChanged)).check(matches(withText(STRING_TO_BE_TYPED)));
